@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{theme}
+  a(href= "./new")
+    button(type= "button") Add New Message
+  br
+  
+  each message, i in messages
+    div.message-block
+      h2 "#{message.text}"
+      p ...#{message.user} 
+      p.end-of-message-block= message.added
+
+  a(href= "./new")
+    button(type= "button") Add New Message
